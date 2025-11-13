@@ -1,0 +1,43 @@
+# Build artifacts
+*.o
+*.exe
+*.out
+*.app
+mongodb-tui
+mongodb-tui.exe
+
+# Build directories
+obj/
+_build/
+build/
+*.dSYM/
+
+# Editor and IDE files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-*
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Debug files
+*.pdb
+*.ilk
+*.dSYM
+
+# Dependency files
+*.d
+
+# Core dumps
+core
+core.*
+vgcore.*
+
+# Test files
+test_data/
+*.log

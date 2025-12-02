@@ -6,12 +6,12 @@
 
 // estructura de contexto de mongo
 typedef struct {
-    mongoc_client_t *client;
-    mongoc_uri_t *uri;
-    char *current_db;
-    char *current_collection;
-    bool connected;
-    char error_message[512];
+  mongoc_client_t *client;
+  mongoc_uri_t *uri;
+  char *current_db;
+  char *current_collection;
+  bool connected;
+  char error_message[512];
 } mongo_context_t;
 
 // inicializar librería de mongo
@@ -39,7 +39,8 @@ bool mongo_ping(mongo_context_t *ctx);
 char **mongo_list_databases(mongo_context_t *ctx, int *count);
 
 // listar colecciones
-char **mongo_list_collections(mongo_context_t *ctx, const char *db_name, int *count);
+char **mongo_list_collections(mongo_context_t *ctx, const char *db_name,
+                              int *count);
 
 // crear colección
 bool mongo_create_collection(mongo_context_t *ctx, const char *db_name,
@@ -51,7 +52,8 @@ bool mongo_drop_collection(mongo_context_t *ctx, const char *db_name,
 
 // contar documentos
 long long mongo_count_documents(mongo_context_t *ctx, const char *db_name,
-                                const char *collection_name, const bson_t *filter);
+                                const char *collection_name,
+                                const bson_t *filter);
 
 // buscar documentos
 bson_t **mongo_find_documents(mongo_context_t *ctx, const char *db_name,
@@ -64,13 +66,14 @@ bool mongo_insert_document(mongo_context_t *ctx, const char *db_name,
 
 // actualizar documentos
 long long mongo_update_documents(mongo_context_t *ctx, const char *db_name,
-                                 const char *collection_name, const bson_t *filter,
-                                 const bson_t *update, bool update_many);
+                                 const char *collection_name,
+                                 const bson_t *filter, const bson_t *update,
+                                 bool update_many);
 
 // eliminar documentos
 long long mongo_delete_documents(mongo_context_t *ctx, const char *db_name,
-                                 const char *collection_name, const bson_t *filter,
-                                 bool delete_many);
+                                 const char *collection_name,
+                                 const bson_t *filter, bool delete_many);
 
 // liberar array de documentos
 void mongo_free_documents(bson_t **documents, int count);

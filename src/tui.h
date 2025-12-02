@@ -3,34 +3,29 @@
 
 // header de curses multiplataforma
 #ifdef _WIN32
-    #include <curses.h>  // PDCurses en Windows
+#include <curses.h> // PDCurses en Windows
 #else
-    #include <ncurses.h> // ncurses en Unix
+#include <ncurses.h> // ncurses en Unix
 #endif
 
 #include <stdbool.h>
 
 // IDs de pantallas
 typedef enum {
-    SCREEN_CONNECTION,
-    SCREEN_DATABASE_LIST,
-    SCREEN_COLLECTION_LIST,
-    SCREEN_DOCUMENT_VIEWER,
-    SCREEN_DOCUMENT_INSERT,
-    SCREEN_DOCUMENT_EDIT,
-    SCREEN_DOCUMENT_DELETE,
-    SCREEN_FILTER,
-    SCREEN_HELP,
-    SCREEN_QUIT
+  SCREEN_CONNECTION,
+  SCREEN_DATABASE_LIST,
+  SCREEN_COLLECTION_LIST,
+  SCREEN_DOCUMENT_VIEWER,
+  SCREEN_DOCUMENT_INSERT,
+  SCREEN_DOCUMENT_EDIT,
+  SCREEN_DOCUMENT_DELETE,
+  SCREEN_FILTER,
+  SCREEN_HELP,
+  SCREEN_QUIT
 } screen_id_t;
 
 // tipos de mensajes
-typedef enum {
-    MSG_INFO,
-    MSG_SUCCESS,
-    MSG_WARNING,
-    MSG_ERROR
-} msg_type_t;
+typedef enum { MSG_INFO, MSG_SUCCESS, MSG_WARNING, MSG_ERROR } msg_type_t;
 
 // inicializar TUI
 bool tui_init(void);
@@ -63,13 +58,13 @@ void tui_get_size(int *height, int *width);
 void tui_draw_centered(WINDOW *win, int y, const char *text);
 
 // constantes de colores
-#define COLOR_PAIR_NORMAL   1
-#define COLOR_PAIR_HEADER   2
+#define COLOR_PAIR_NORMAL 1
+#define COLOR_PAIR_HEADER 2
 #define COLOR_PAIR_SELECTED 3
-#define COLOR_PAIR_STATUS   4
-#define COLOR_PAIR_ERROR    5
-#define COLOR_PAIR_SUCCESS  6
-#define COLOR_PAIR_WARNING  7
-#define COLOR_PAIR_INFO     8
+#define COLOR_PAIR_STATUS 4
+#define COLOR_PAIR_ERROR 5
+#define COLOR_PAIR_SUCCESS 6
+#define COLOR_PAIR_WARNING 7
+#define COLOR_PAIR_INFO 8
 
 #endif // TUI_H

@@ -2,7 +2,7 @@ Write-Host "MongoDB TUI - MinGW Build" -ForegroundColor Cyan
 Write-Host "==========================" -ForegroundColor Cyan
 Write-Host ""
 
-$env:VCPKG_ROOT = "C:\Users\josva\projects\vcpkg"
+$env:VCPKG_ROOT = "C:\Users\josval\vcpkg"
 Write-Host "VCPKG_ROOT: $env:VCPKG_ROOT" -ForegroundColor Green
 
 $gccPath = Get-Command gcc -ErrorAction SilentlyContinue
